@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
-
+import { useNavigate, useLocation } from "react-router-dom";
 const Login = () => {
-    const { loginUser, googleUser ,githubUser } = useContext(AuthContext);
+    const { user, loginUser, googleUser, githubUser } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const {
         register,
@@ -21,6 +23,11 @@ const Login = () => {
                 alert("Invalid email or Password")
             })
     }
+    useEffect(() => {
+        if (user) {
+            navigate(location.state)
+        }
+    }, [user])
 
 
 

@@ -8,54 +8,62 @@ const GithubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     console.log(user);
     // Create User
     const registerUser = (email, password) => {
-          return createUserWithEmailAndPassword(auth , email, password)
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
-    
+
     // Update User Profile
-    const updateUserProfile = (name, image) =>{
+    const updateUserProfile = (name, image) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, {
-            displayName: name, 
+            displayName: name,
             photoURL: image,
-          })
+        })
     }
 
     // Login user
-    const loginUser = (email, password) =>{
+    const loginUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     // Google login
-    const googleUser = () =>{
+    const googleUser = () => {
+        setLoading(true)
         return signInWithPopup(auth, GoogleProvider);
     }
 
     // Github User
-    const githubUser = () =>{
+    const githubUser = () => {
+        setLoading(true)
         return signInWithPopup(auth, GithubProvider);
     }
-    
+
     // Logout user
-    const logout = () =>{
+    const logout = () => {
         setUser(null)
         signOut(auth);
     }
     // Observer
-    useEffect(() =>{
-        const unsubscribe = onAuthStateChanged(auth, (user) =>{
-            if(user){
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
                 setUser(user);
+                setLoading(false);
             }
-            else{
+            else {
                 setUser(null);
             }
         });
-        return () =>{
+        return () => {
             unsubscribe()
         }
-    },[])
+    }, [])
 
 
     const authInfo = {
@@ -66,6 +74,7 @@ const AuthProvider = ({ children }) => {
         googleUser,
         githubUser,
         logout,
+        loading,
     }
 
     return (
