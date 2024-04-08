@@ -7,7 +7,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 const Banner = () => {
 
     return (
-        <div>
+        <div className='mt-8'>
             <Swiper
                 pagination={{
                     type: 'progressbar',
