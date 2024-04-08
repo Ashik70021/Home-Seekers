@@ -15,6 +15,7 @@ import AuthProvider from './Components/AuthProvider';
 import Error from './Components/Error';
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './Components/About';
+import DetailsItem from './Components/DetailsItem';
 
 
 const router = createBrowserRouter([
@@ -47,7 +48,6 @@ const router = createBrowserRouter([
           <Error></Error>
         </ProtectedRoute>
       },
-
     ]
   },
 ]);
