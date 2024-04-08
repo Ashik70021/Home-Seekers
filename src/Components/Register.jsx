@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { registerUser, updateUserProfile } = useContext(AuthContext);
@@ -35,6 +36,9 @@ const Register = () => {
 
     return (
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl border mx-auto mt-16">
+             <Helmet>
+                <title>Home Seekers | Register</title>
+            </Helmet>
             <h1 className="text-2xl font-bold text-center">Register</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-1 text-sm">

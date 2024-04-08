@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const { user, loginUser, googleUser, githubUser } = useContext(AuthContext);
     const location = useLocation()
@@ -33,6 +34,9 @@ const Login = () => {
 
     return (
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl border mx-auto mt-16">
+             <Helmet>
+                <title>Home Seekers | Login</title>
+            </Helmet>
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-1 text-sm">
