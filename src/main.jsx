@@ -48,6 +48,14 @@ const router = createBrowserRouter([
           <Error></Error>
         </ProtectedRoute>
       },
+      {
+        path: "/itemdetails/:id",
+        element: <ProtectedRoute>
+          <DetailsItem></DetailsItem>
+        </ProtectedRoute>,
+        loader: () => fetch("Residential.json")
+      }
+
     ]
   },
 ]);
