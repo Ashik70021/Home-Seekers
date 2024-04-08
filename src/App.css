@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,31 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+.slide {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide1 {
+  background-image: url("./assets/Active Senior Living Community.jpg");
+}
+
+.slide2 {
+  background-image: url("./assets/Beachfront Retreat for Vacation.jpg");
+}
+
+.slide3 {
+  background-image: url("./assets/Luxury Apartment with City Views.jpg");
+}
+
+.slide4 {
+  background-image: url("./assets/Modern Townhouse in Urban Setting.jpg");
 }
