@@ -61,9 +61,15 @@
 }
 
 .slide3 {
+  
   background-image: url("./assets/Luxury Apartment with City Views.jpg");
 }
 
 .slide4 {
   background-image: url("./assets/Modern Townhouse in Urban Setting.jpg");
+}
+
+
+.imageSlide{
+  
 }

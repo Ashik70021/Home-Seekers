@@ -7,7 +7,7 @@ const Navbar = () => {
     const Link = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         {
-            user && <li> <NavLink to='/about'>About</NavLink> </li>
+            user && <li> <NavLink to='/about'>User Profile</NavLink> </li>
         }
         <li> <NavLink to='/error'>Error</NavLink> </li>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                                     <img alt="profile" src={user?.photoURL ||"https://i.ibb.co/9N4MfJH/user.png"}/>
                                 </div>
                             </div>
-                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 <li><a>{user.displayName}</a></li>
                                 <li><a>Settings</a></li>
                                 <li onClick={() => logout()}><a>Logout</a></li>

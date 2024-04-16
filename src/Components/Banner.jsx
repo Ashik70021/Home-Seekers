@@ -7,7 +7,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 const Banner = () => {
 
     return (
-        <div className='mt-8'>
+        <div className='imageSlide mt-8 rounded'>
             <Swiper
                 pagination={{
                     type: 'progressbar',
@@ -17,7 +17,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide><div className="slide slide1">
-                    <h1>slide 1</h1>
+                    <h1 className='text-5xl font-bold text-white'>Your Home Awaits <br /> Let's Find It Together</h1>
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slide slide2">
                     <h1>slide 2</h1>
