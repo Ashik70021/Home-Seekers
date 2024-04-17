@@ -1,45 +1,17 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container {
+  position: relative;
+}
+.text-block {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  font-size: 40px;
   text-align: center;
+  font-weight: bold;
+  width: 100%; 
+  padding: 20px; 
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 
 .slide {
   height: 60vh;
@@ -50,10 +22,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 15px;
 }
 
 .slide1 {
-  background-image: url("./assets/Active Senior Living Community.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/Active Senior Living Community.jpg");
 }
 
 .slide2 {
@@ -61,15 +34,10 @@
 }
 
 .slide3 {
-  
+
   background-image: url("./assets/Luxury Apartment with City Views.jpg");
 }
 
 .slide4 {
   background-image: url("./assets/Modern Townhouse in Urban Setting.jpg");
-}
-
-
-.imageSlide{
-  
 }

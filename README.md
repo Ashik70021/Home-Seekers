@@ -18,3 +18,4 @@
 
 - React Hook Form
 - Swiper Slider
+- Animate CSS

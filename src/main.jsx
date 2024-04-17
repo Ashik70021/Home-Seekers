@@ -18,6 +18,7 @@ import Error from './Components/Error';
 import ProtectedRoute from './Components/ProtectedRoute';
 import About from './Components/About';
 import DetailsItem from './Components/DetailsItem';
+import Contact from './Components/Contact';
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,12 @@ const router = createBrowserRouter([
           <DetailsItem></DetailsItem>
         </ProtectedRoute>,
         loader: () => fetch("Residential.json")
+      },
+      {
+        path: "/contact",
+        element: <ProtectedRoute>
+          <Contact></Contact>
+        </ProtectedRoute>
       }
 
     ]

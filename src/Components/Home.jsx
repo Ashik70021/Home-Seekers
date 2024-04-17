@@ -12,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <div className="text-center">
                 <h1 className="mt-16 text-3xl font-bold animate__backInRight">New Features</h1>
+                <p className='mt-6 text-xl font-normal text-gray-600 '>Unlock your dream home with us. Your trusted partner in finding the perfect space. Welcome home to a new chapter.</p>
             </div>
             <Items></Items>
         </div>

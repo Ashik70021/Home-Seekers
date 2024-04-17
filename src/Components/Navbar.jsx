@@ -9,7 +9,10 @@ const Navbar = () => {
         {
             user && <li> <NavLink to='/about'>User Profile</NavLink> </li>
         }
-        <li> <NavLink to='/error'>Error</NavLink> </li>
+        {
+            user && <li> <NavLink to='/contact'>Contact</NavLink> </li>
+        }
+        <li> <NavLink to='/error'>Error test</NavLink> </li>
 
     </>
     return (
