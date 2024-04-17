@@ -4,12 +4,17 @@
 
 ## Features and Characteristics:
 
-- **Books:** Updated with top books with ratings and review.
+- **Items:** Find suitable Property (house or Room).
 
-- **Details Book:** User can see book details and make it wishlist or Read the books.
+- **Details :** User can see proprty details.
 
-- **Listed Book:** User can see their readed or wishlist books. 
+- **Login and Register:** User can Login and Register with their profile.
 
-- **Order books:** Allaw user to order books if user want.
+- **Login with social:** User can Login with their Social account.
 
-- **Contact:** Allaw to contact to the author
+- **Update Profile:** User can update their Profile.
+
+## npm Package Name:
+
+- React Hook Form
+- Swiper Slider
