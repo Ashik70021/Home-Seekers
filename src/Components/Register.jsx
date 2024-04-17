@@ -1,42 +1,47 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+import { LuEye, LuEyeOff } from "react-icons/lu";
 
 const Register = () => {
     const { registerUser, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+
+
     const {
         register,
         handleSubmit,
         formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        const{email, password, name, photoURL} = data;
-        if(password.length < 6){
+        const { email, password, name, photoURL } = data;
+        if (password.length < 6) {
             alert("Password must be 6 character or longer")
             return;
         }
-        if(!/^(?=.*[A-Z]).+$/.test(password)){
+        if (!/^(?=.*[A-Z]).+$/.test(password)) {
             alert("Must have an Uppercase letter in the password");
             return;
         }
-        if(!/^(?=.*[a-z]).+$/.test(password)){
+        if (!/^(?=.*[a-z]).+$/.test(password)) {
             alert("Must have a Lowercase letter in the password");
             return;
         }
-        
+
         registerUser(email, password)
-        .then(() =>{
-            updateUserProfile(name, photoURL)
-            alert("Successfully Register");
-        })
+            .then(() => {
+                updateUserProfile(name, photoURL)
+                alert("Successfully Register");
+            })
     }
 
 
 
     return (
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl border mx-auto mt-16">
-             <Helmet>
+            <Helmet>
                 <title>Home Seekers | Register</title>
             </Helmet>
             <h1 className="text-2xl font-bold text-center">Register</h1>
@@ -49,23 +54,31 @@ const Register = () => {
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                    <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border" 
-                    {...register("email", { required: true })}
+                    <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                        {...register("email", { required: true })}
                     />
                     {errors.email && <span className="text-red-500">This field is required</span>}
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="Photo URL" className="block dark:text-gray-600">Photo URL</label>
                     <input type="Photo URL" name="PhotoURL" id="Photo URL" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
-                    {...register("photoURL")} />
+                        {...register("photoURL")} />
                 </div>
-                <div className="space-y-1 text-sm">
+
+                <div className="space-y-1 text-sm relative">
                     <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
-                    {...register("password", { required: true })}
+                    <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                        {...register("password", { required: true })}
                     />
+                    <span className="absolute top-8 right-2 text-xl"
+                        onClick={() => setShowPassword(!showPassword)}>
+                        {
+                            showPassword ? <LuEyeOff></LuEyeOff> : <LuEye></LuEye>
+                        }
+                    </span>
                     {errors.password && <span className="text-red-500" >This field is required</span>}
                 </div>
+
                 <button className="block w-full p-3 text-center rounded-s border bg-violet-500 text-white">Sign up</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">

@@ -3,8 +3,12 @@ import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+import { LuEye, LuEyeOff } from "react-icons/lu";
+
 const Login = () => {
     const { user, loginUser, googleUser, githubUser } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -46,11 +50,17 @@ const Login = () => {
                     />
                     {errors.email && <span className="text-red-500">This field is required</span>}
                 </div>
-                <div className="space-y-1 text-sm">
+                <div className="space-y-1 text-sm relative">
                     <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
+                    <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border"
                         {...register("password", { required: true })}
                     />
+                    <span className="absolute top-8 right-2 text-xl"
+                            onClick={() => setShowPassword(!showPassword)}>
+                            {
+                                showPassword ? <LuEyeOff></LuEyeOff> : <LuEye></LuEye>
+                            }
+                        </span>
                     {errors.password && <span className="text-red-500" >This field is required</span>}
 
                     <div className="flex justify-end text-xs dark:text-gray-600">

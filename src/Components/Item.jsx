@@ -8,21 +8,23 @@ const Item = ({ item }) => {
             <img src={img} alt="" className=" mx-auto object-cover object-center rounded-md dark:bg-gray-500" />
             <div className="card-body text-center">
                 <div className="flex justify-start">
-                    <h1 className=" pl-2 pr-2 pb-1 pt-1 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold mr-6">tags</h1>
-                    <h1 className=" pl-2 pr-2 pb-1 pt-1 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold mr-6">tags</h1>
+                    <h1 className="pl-3 pr-3 pb-2 pt-2 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold">{area}</h1>
                 </div>
-                <h2 className="card-title font-bold text-2xl text-[#131313]">{estate_title}</h2>
-                <p className="card-title text-[#131313cc] font-medium text-lg">By: {segment_name}</p>
+                <h2 className="card-title items-start font-bold text-2xl text-[#131313]">{estate_title}</h2>
+                <p className=" card-title items-start  text-[#131313cc] font-medium text-lg">By: {segment_name}</p>
                 <hr className="mt-2 dashed" />
                 <div className="flex justify-around mt-4">
                     <div>
-                        <span className="text-[#131313cc] font-medium text-lg">{status}</span>
+                        <span className="text-[#131313cc] font-medium text-xl">{status}</span>
                     </div>
                     <div className="flex gap-3">
-                        <p className="text-lg text-[#131313cc]">{price}</p>
+                        <p className="text-xl font-medium text-[#131313cc]">{price}</p>
                     </div>
                 </div>
-                <Link to={`/itemdetails/${id}`}><button className="btn w-full bg-violet-500 text-white">View Property</button></Link>
+                <div>
+
+                </div>
+                <Link to={`/itemdetails/${id}`}><button className="mt-4 btn w-full bg-violet-500 text-white">View Property</button></Link>
             </div>
         </div>
     );
