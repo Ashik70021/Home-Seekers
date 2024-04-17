@@ -1,6 +1,6 @@
 # Home Seekers
 
-[Live Site](https://books-vibe-react.netlify.app/)
+[Live Site](https://home-seekers-project.web.app)
 
 ## Features and Characteristics:
 
