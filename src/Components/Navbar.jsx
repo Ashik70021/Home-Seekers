@@ -7,7 +7,7 @@ const Navbar = () => {
     const Link = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         {
-            user && <li> <NavLink to='/about'>User Profile</NavLink> </li>
+            user && <li> <NavLink to='/about'>Update Profile</NavLink> </li>
         }
         {
             user && <li> <NavLink to='/contact'>Contact</NavLink> </li>

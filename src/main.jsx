@@ -16,9 +16,9 @@ import Register from './Components/Register';
 import AuthProvider from './Components/AuthProvider';
 import Error from './Components/Error';
 import ProtectedRoute from './Components/ProtectedRoute';
-import About from './Components/About';
 import DetailsItem from './Components/DetailsItem';
 import Contact from './Components/Contact';
+import UpdateProfile from './Components/UpdateProfile';
 
 
 const router = createBrowserRouter([
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <ProtectedRoute>
-          <About></About>
+          <UpdateProfile></UpdateProfile>
         </ProtectedRoute>
       },
       {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <DetailsItem></DetailsItem>
         </ProtectedRoute>,
-        loader: () => fetch("Residential.json")
+        loader: () => fetch("/Residential.json")
       },
       {
         path: "/contact",
